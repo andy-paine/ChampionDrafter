@@ -1,0 +1,1 @@
+var championdrafter = angular.module('championdrafter', []);

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Champion Drafter</title>
+</head>
+<body>
+	<section>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="/javascripts/championdrafter.js"></script>
+		<script src="/javascripts/champions.js"></script>
+		<script src="/javascripts/bluepicks.js"></script>
+		<script src="/javascripts/redpicks.js"></script>
+		<script src="/javascripts/bluebans.js"></script>
+		<script src="/javascripts/redbans.js"></script>
+		<script src="/javascripts/pubsub.js"></script>
+		<script src="http://mcpants.github.io/jquery.shapeshift/core/jquery.shapeshift.min.js"></script>
+	</section>
+	
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<div id="draftingscreen" ng-app="championdrafter" ng-controller="pubsub">
+		<div class="pickban" id="leftpb"> 
+			<div class="pick" ng-include="'/templates/bluepicks.html'"></div>		
+		</div>
+		<div id="champframe" ng-controller="championcontroller">
+			<div id="champlist">
+				<img ng-repeat="champ in championlist | orderBy: 'name'" class="{{champ.imagetype}}" ng-src="{{champ.imageurl}}" ng-click="selectChampion(champ)">
+			</div>
+			<img class="championportrait" ng-src="{{ selectedchamp.imageurl }}">
+			<button ng-click="lockIn()">Lock In</button>
+		</div>
+		<div class="pickban" id="rightpb">
+			<div class="pick" ng-include="'/templates/redpicks.html'"></div>	
+		</div>		
+	</div>
+</body>
+</html>

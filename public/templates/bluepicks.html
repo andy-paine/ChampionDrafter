@@ -1,0 +1,7 @@
+<ul ng-controller="bluepickscontroller">
+	<li ng-repeat="champ in picks">
+		<img class="championportrait" ng-src="{{ champ.imageurl }}">
+		<span>{{ champ.name }}</span>
+	</li>
+</ul>
+<div class="ban" ng-include="'/templates/bluebans.html'"></div>

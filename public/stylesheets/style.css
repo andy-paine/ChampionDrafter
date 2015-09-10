@@ -1,0 +1,68 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.championportrait, .grayedout {
+	height: 80px;
+	width: 80px;
+}
+
+.grayedout {
+	filter: grayscale(100%);
+}
+
+
+#draftingscreen {
+	position: relative;
+	width: 100%;
+	height: 800px; 
+}
+
+.pickban {
+	position: absolute;
+	height: 800px;
+	width: 300px;
+	top: 0;
+}
+
+#leftpb {
+	left: 0;
+}
+
+#rightpb {
+	right: 0;
+}
+
+#champframe {
+	position: absolute;
+	top: 0;
+	left: 300px;
+	width: 60%;
+	height: 800px;
+}
+
+.pick {
+	width: 300px;
+  	height: 800px;
+ 	top: 0;
+ 	left: 0;
+ 	position: absolute;
+}
+
+.ban {
+	width: 300px;
+  	height: 300px;
+  	bottom: 0;
+  	left: 0;
+  	position: absolute;
+}
+
+#champlist {
+	height: 600px;
+	overflow-y: auto;
+}
+
+a {
+  color: #00B7FF;
+}
